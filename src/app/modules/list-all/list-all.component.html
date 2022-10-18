@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Scholar</th>
+        <th scope="col">Faculty</th>
+        <th scope="col">Title</th>
+        <th scope="col">Journal</th>
+        <th scope="col">Conference</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of entries" >
+        <th scope="row">1</th>
+        <td>  {{obj.scholar}}  </td>
+        <td>  {{obj.faculty}}  </td>
+        <td>  {{obj.title}}  </td>
+        <td>  {{obj.journal}}  </td>
+        <td>  {{obj.conference}}  </td>
+      </tr>
+    </tbody>
+  </table>

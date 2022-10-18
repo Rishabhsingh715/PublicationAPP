@@ -1,0 +1,9 @@
+.form-control{
+    display: flex !important;
+    width: auto;
+}
+
+.form-select{
+    display: flex !important;
+    width: auto;
+}
