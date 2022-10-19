@@ -1,9 +1,9 @@
 <div class="container-fluid">
 
   <div class="form-group row mt-2 p-2 pb-4 border-bottom d-flex">
-    <label for="exampleInputEmail1" class="col-sm-4">Select the resource to add</label>
-    <!-- <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-     aria-describedby="emailHelp" placeholder="Enter email"> -->
+    <label for="exampleInputtext1" class="col-sm-4"><p><b> Select the resource to add</b>  </p></label>
+    <!-- <input type="text" class="form-control col-sm-6" id="exampleInputtext1"
+     aria-describedby="textHelp" placeholder="Enter text"> -->
      <select [(ngModel)]="selectedResource" (change)="changedResource()" class="form-select form-select-sm" aria-label=".form-select-sm example">
       <option selected value="1">Faculty</option>
       <option value="2">Scholar</option>
@@ -22,32 +22,32 @@
     <!-- For faculty -->
     <div *ngIf="selectedResource === '1'" class="faculty boxx p-4 mt-4 border" >
       <p><b> Add the faculty details</b>  </p>
-      <div class="row">
+      <div class="row" [formGroup]="facultyForms" >
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add FacultyID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add FacultyID">
+              <label for="exampleInputtext1" class="col-sm-2">Add Faculty ID</label>
+              <input formControlName="fac_id" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add FacultyID">
             </div>
           
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add FacultyName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add FacultyName">
+              <label for="exampleInputtext1" class="col-sm-2">Add Faculty Name</label>
+              <input formControlName="fac_name" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add FacultyName">
           
               
             </div>
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add FacultyID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add FacultyID">
+              <label for="exampleInputtext1" class="col-sm-2">Add Department Name</label>
+              <input formControlName="dept_id" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add FacultyID">
           
               
             </div>
           
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add FacultyName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add FacultyName">
+              <label for="exampleInputtext1" class="col-sm-2">Add Department ID</label>
+              <input formControlName="password" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add FacultyName">
           
               
             </div>
@@ -55,39 +55,39 @@
           </div>
 
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button> 
+      <button type="submit" class="btn btn-primary" (click)="submitFaculty()" >Submit</button> 
     </div>
 
 
     <!-- for scholars -->
     <div *ngIf="selectedResource === '2'" class="faculty boxx p-4 mt-4 border" >
       <p><b> Add the Scholar details</b>  </p>
-      <div class="row">
+      <div [formGroup]="scholarForms" class="row">
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add ScholarID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add ScholarID">
+              <label for="exampleInputtext1" class="col-sm-2">Add ScholarID</label>
+              <input formControlName="roll_no" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add ScholarID">
             </div>
           
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add ScholarName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add ScholarName">
+              <label for="exampleInputtext1" class="col-sm-2">Add ScholarName</label>
+              <input formControlName="name" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add ScholarName">
           
               
             </div>
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add ScholarID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add ScholarID">
+              <label for="exampleInputtext1" class="col-sm-2">Add ScholarID</label>
+              <input formControlName="dept_id" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add ScholarID">
           
               
             </div>
           
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add ScholarName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add ScholarName">
+              <label for="exampleInputtext1" class="col-sm-2">Add ScholarName</label>
+              <input formControlName="password" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add ScholarName">
           
               
             </div>
@@ -95,39 +95,24 @@
           </div>
 
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button> 
+      <button type="submit" class="btn btn-primary" (click)="submitScholar()">Submit</button> 
     </div>
 
 
     <!-- for departments -->
     <div *ngIf="selectedResource === '3'" class="faculty boxx p-4 mt-4 border" >
       <p><b> Add the Department details</b>  </p>
-      <div class="row">
+      <div [formGroup]="deptForms" class="row">
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add DepartmentID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add DepartmentID">
+              <label for="exampleInputtext1" class="col-sm-2">Add DepartmentID</label>
+              <input formControlName="dept_id" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add DepartmentID">
             </div>
           
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add DepartmentName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add DepartmentName">
-          
-              
-            </div>
-          <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add DepartmentID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add DepartmentID">
-          
-              
-            </div>
-          
-          <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add DepartmentName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add DepartmentName">
+              <label for="exampleInputtext1" class="col-sm-2">Add DepartmentName</label>
+              <input formControlName="dept_name" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add DepartmentName">
           
               
             </div>
@@ -135,37 +120,22 @@
           </div>
 
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button> 
+      <button type="submit" class="btn btn-primary" (click)="submitDept()" >Submit</button> 
     </div>
     <!-- for journals -->
     <div *ngIf="selectedResource === '4'" class="Department boxx p-4 mt-4 border" >
       <p><b> Add the Journal details</b>  </p>
-      <div class="row">
+      <div [formGroup]="jorForms" class="row">
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add JournalID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add JournalID">
+              <label for="exampleInputtext1" class="col-sm-2">Add JournalID</label>
+              <input formControlName="jour_id"  type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add JournalID">
             </div>
           
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add JournalName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add JournalName">
-          
-              
-            </div>
-          <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add JournalID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add JournalID">
-          
-              
-            </div>
-          
-          <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add JournalName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add JournalName">
+              <label for="exampleInputtext1" class="col-sm-2">Add JournalName</label>
+              <input formControlName="jour_name"  type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add JournalName">
           
               
             </div>
@@ -173,39 +143,24 @@
           </div>
 
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button> 
+      <button type="submit" class="btn btn-primary" (click)="submitJor()">Submit</button> 
     </div>
 
 
     <!-- for conferences -->
     <div *ngIf="selectedResource === '5'" class="faculty boxx p-4 mt-4 border" >
       <p><b> Add the Conference details</b>  </p>
-      <div class="row">
+      <div [formGroup]="confForms" class="row">
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add ConferenceID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add ConferenceID">
+              <label for="exampleInputtext1" class="col-sm-2">Add ConferenceID</label>
+              <input formControlName="conf_id" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add ConferenceID">
             </div>
           
           <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add ConferenceName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add ConferenceName">
-          
-              
-            </div>
-          <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add ConferenceID</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add ConferenceID">
-          
-              
-            </div>
-          
-          <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Add ConferenceName</label>
-              <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Add ConferenceName">
+              <label for="exampleInputtext1" class="col-sm-2">Add ConferenceName</label>
+              <input formControlName="conf_name" type="text" class="form-control col-sm-6" id="exampleInputtext1"
+              aria-describedby="textHelp" placeholder="Add ConferenceName">
           
               
             </div>
@@ -213,7 +168,7 @@
           </div>
 
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button> 
+      <button type="submit" class="btn btn-primary" (click)="submitConf()">Submit</button> 
     </div>
 
 

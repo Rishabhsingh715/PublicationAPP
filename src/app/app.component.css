@@ -1,3 +1,9 @@
 .navbar{
     background-color: gainsboro !important;
 }
+
+.active{
+        color: blue !important;
+        font-weight: 500 !important;
+        font-size: 1.052rem !important;
+    }

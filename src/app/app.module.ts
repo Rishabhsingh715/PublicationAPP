@@ -8,6 +8,7 @@ import { ListAllComponent } from './modules/list-all/list-all.component';
 import { AddResourcesComponent } from './modules/add-resources/add-resources.component';
 import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AppService } from './app.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
   ],
