@@ -23,7 +23,7 @@ export class ListAllComponent implements OnInit {
     this.appService.getList().subscribe((res: any)=>{
       console.log('is the reuslt', res);
 
-      this.entries = res.result.list;
+      this.entries = res;
       
     })
   }

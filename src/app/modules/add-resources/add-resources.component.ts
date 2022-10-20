@@ -52,7 +52,7 @@ export class AddResourcesComponent implements OnInit {
     })
     this.jorForms = new FormGroup({
       jour_id: new FormControl(''),
-      Jour_name: new FormControl('')
+      jour_name: new FormControl('')
     })
     this.confForms = new FormGroup({
       conf_id: new FormControl(''),

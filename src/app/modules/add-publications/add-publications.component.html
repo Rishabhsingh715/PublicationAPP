@@ -15,9 +15,9 @@
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="scholar" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option selected>Select Scholar</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option [value]="obj.name" *ngFor="let obj of scholarList" > {{obj.name}} </option>
+                <!-- <option value="2">Two</option>
+                <option value="3">Three</option> -->
               </select>
 
                <div class="col-4">
@@ -32,9 +32,9 @@
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="faculty" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option selected>Select Faculty</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option [value]="obj.fac_id" *ngFor="let obj of facultyList" > {{obj.fac_name}} </option>
+                <!-- <option value="2">Two</option>
+                <option value="3">Three</option> -->
               </select>
 
                <div class="col-4">
@@ -48,9 +48,7 @@
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="department" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option selected>Select Department</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option [value]="obj.dept_id" *ngFor="let obj of departmentList" > {{obj.dept_name}} </option>
               </select>
 
                <div class="col-4">
@@ -64,9 +62,7 @@
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="journal" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option selected>Select Journal</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option [value]="obj.jour_id" *ngFor="let obj of journalList" > {{obj.jour_name}} </option>
               </select>
 
                <div class="col-4">
@@ -80,9 +76,7 @@
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="conference" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option selected>Select Conferences</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option [value]="obj.conf_id" *ngFor="let obj of conferenceList" > {{obj.conf_name}} </option>
               </select>
 
                <div class="col-4">
