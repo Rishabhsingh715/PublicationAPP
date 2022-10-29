@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {AppService} from '../../app.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-add-publications',
   templateUrl: './add-publications.component.html',
@@ -16,7 +18,8 @@ export class AddPublicationsComponent implements OnInit {
 
 
   constructor(
-    private appService: AppService
+    private appService: AppService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -27,8 +30,7 @@ export class AddPublicationsComponent implements OnInit {
     this.getDepartment();
     this.getConference();
     this.getJournal();
-
-
+    this.toastr.warning('Select the details and add the paper')
   }
   getFaculty() {
     
@@ -60,7 +62,7 @@ export class AddPublicationsComponent implements OnInit {
   createForm(){
     this.publicationForm = new FormGroup({
       scholar: new FormControl('', [Validators.required]),
-      faculty: new FormControl(''),
+      faculity: new FormControl(''),
       department: new FormControl(''),
       journal: new FormControl(''),
       conference: new FormControl(''),
@@ -72,7 +74,8 @@ export class AddPublicationsComponent implements OnInit {
   submitPublication(){
     let payload = this.publicationForm.value;
     console.log(payload,'publicaitons valus');
-
+    this.publicationForm.reset();
+    this.toastr.success('Publication saved successfully');
     this.appService.savePublication(payload).subscribe((res: any)=>{
 
     });

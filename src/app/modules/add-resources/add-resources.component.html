@@ -5,7 +5,8 @@
     <!-- <input type="text" class="form-control col-sm-6" id="exampleInputtext1"
      aria-describedby="textHelp" placeholder="Enter text"> -->
      <select [(ngModel)]="selectedResource" (change)="changedResource()" class="form-select form-select-sm" aria-label=".form-select-sm example">
-      <option selected value="1">Faculty</option>
+      <option selected value="">Select</option>
+      <option  value="1">Faculty</option>
       <option value="2">Scholar</option>
       <option value="3">Department</option>
       <option value="4">Journal</option>
@@ -39,7 +40,7 @@
           <div class="form-group row p-2 d-flex">
               <label for="exampleInputtext1" class="col-sm-2">Add Department Name</label>
               <input formControlName="dept_id" type="text" class="form-control col-sm-6" id="exampleInputtext1"
-              aria-describedby="textHelp" placeholder="Add FacultyID">
+              aria-describedby="textHelp" placeholder="Add Department Name">
           
               
             </div>
@@ -47,7 +48,7 @@
           <div class="form-group row p-2 d-flex">
               <label for="exampleInputtext1" class="col-sm-2">Add Department ID</label>
               <input formControlName="password" type="text" class="form-control col-sm-6" id="exampleInputtext1"
-              aria-describedby="textHelp" placeholder="Add FacultyName">
+              aria-describedby="textHelp" placeholder="Add Department ID">
           
               
             </div>
@@ -79,7 +80,7 @@
           <div class="form-group row p-2 d-flex">
               <label for="exampleInputtext1" class="col-sm-2">Add Department</label>
               <input formControlName="dept_id" type="text" class="form-control col-sm-6" id="exampleInputtext1"
-              aria-describedby="textHelp" placeholder="Add ScholarID">
+              aria-describedby="textHelp" placeholder="Add Department">
           
               
             </div>
@@ -87,7 +88,7 @@
           <div class="form-group row p-2 d-flex">
               <label for="exampleInputtext1" class="col-sm-2">Password</label>
               <input formControlName="password" type="text" class="form-control col-sm-6" id="exampleInputtext1"
-              aria-describedby="textHelp" placeholder="Add ScholarName">
+              aria-describedby="textHelp" placeholder="Password">
           
               
             </div>

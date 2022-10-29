@@ -3,18 +3,19 @@
     
 
     <div class="row pt-2">
-        <h4>Add the journal details</h4>
+        <h4>Add the Journal Details</h4>
     </div>
 
     <div class="row">
-
         <form [formGroup]="publicationForm">
+          <div class="row">
+          <div class="col-sm-6">
             <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Scholar</label>
+              <label for="exampleInputEmail1" class="col-sm-3">Scholar</label>
               <!-- <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="scholar" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Select Scholar</option>
+                <option selected value="">Select Scholar</option>
                 <option [value]="obj.name" *ngFor="let obj of scholarList" > {{obj.name}} </option>
                 <!-- <option value="2">Two</option>
                 <option value="3">Three</option> -->
@@ -27,11 +28,11 @@
 
             
             <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Faculty</label>
+              <label for="exampleInputEmail1" class="col-sm-3">Faculty</label>
               <!-- <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
                aria-describedby="emailHelp" placeholder="Enter email"> -->
-               <select formControlName="faculty" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Select Faculty</option>
+               <select formControlName="faculity" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option selected value="">Select Faculty</option>
                 <option [value]="obj.fac_id" *ngFor="let obj of facultyList" > {{obj.fac_name}} </option>
                 <!-- <option value="2">Two</option>
                 <option value="3">Three</option> -->
@@ -43,11 +44,11 @@
             </div>
 
             <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Department</label>
+              <label for="exampleInputEmail1" class="col-sm-3">Department</label>
               <!-- <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="department" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Select Department</option>
+                <option selected value="">Select Department</option>
                 <option [value]="obj.dept_id" *ngFor="let obj of departmentList" > {{obj.dept_name}} </option>
               </select>
 
@@ -55,13 +56,16 @@
 
                </div>
             </div>
+          </div>
 
+
+          <div class="col-sm-6">
             <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Journal</label>
+              <label for="exampleInputEmail1" class="col-sm-3">Journal</label>
               <!-- <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="journal" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Select Journal</option>
+                <option selected value="">Select Journal</option>
                 <option [value]="obj.jour_id" *ngFor="let obj of journalList" > {{obj.jour_name}} </option>
               </select>
 
@@ -71,11 +75,11 @@
             </div>
 
             <div class="form-group row p-2 d-flex">
-              <label for="exampleInputEmail1" class="col-sm-2">Conferences</label>
+              <label for="exampleInputEmail1" class="col-sm-3">Conferences</label>
               <!-- <input type="email" class="form-control col-sm-6" id="exampleInputEmail1"
                aria-describedby="emailHelp" placeholder="Enter email"> -->
                <select formControlName="conference" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Select Conferences</option>
+                <option selected value="">Select Conferences</option>
                 <option [value]="obj.conf_id" *ngFor="let obj of conferenceList" > {{obj.conf_name}} </option>
               </select>
 
@@ -83,10 +87,13 @@
 
                </div>
             </div>
-
+          </div>
+        </div>
+<hr>
+        <div class="row">
             <div class="form-group row p-2 d-flex">
-                <label for="exampleInputEmail1" class="col-sm-2">Add paper title</label>
-                <input formControlName="papertitle" type="email" class="form-control col-sm-6" id="exampleInputEmail1"
+                <label for="exampleInputEmail1" class="col ms-3">Add paper title</label>
+                <input formControlName="papertitle" type="email" class="form-control col" id="exampleInputEmail1"
                  aria-describedby="emailHelp" placeholder="Add paper title">
   
                  <div class="col-4">
@@ -94,8 +101,8 @@
               </div>
 
             <div class="form-group row p-2 d-flex">
-                <label for="exampleInputEmail1" class="col-sm-2">Add pp</label>
-                <input formControlName="pp" type="email" class="form-control col-sm-6" id="exampleInputEmail1"
+                <label for="exampleInputEmail1" class="col ms-3">Add pages</label>
+                <input formControlName="pp" type="email" class="form-control col" id="exampleInputEmail1"
                  aria-describedby="emailHelp" placeholder="Add pp">
   
                  <div class="col-4">
@@ -103,8 +110,8 @@
               </div>
             <div class="form-check">
             </div>
-
-            <button type="submit" class="btn btn-primary" (click)="submitPublication()">Submit</button>
+            <button type="submit" class="btn btn-primary col-2" (click)="submitPublication()">Submit</button>
+          </div>
           </form>
     </div>
 </div>

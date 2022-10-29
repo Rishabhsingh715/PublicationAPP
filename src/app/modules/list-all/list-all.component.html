@@ -10,11 +10,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let obj of entries" >
-        <th scope="row">1</th>
+      <tr *ngFor="let obj of entries; let i=index" >
+        <th scope="row"> {{i+1}} </th>
         <td>  {{obj.scholar}}  </td>
-        <td>  {{obj.faculty}}  </td>
-        <td>  {{obj.title}}  </td>
+        <td>  {{obj.faculity}}  </td>
+        <td>  {{obj.papertitle}}  </td>
         <td>  {{obj.journal}}  </td>
         <td>  {{obj.conference}}  </td>
       </tr>

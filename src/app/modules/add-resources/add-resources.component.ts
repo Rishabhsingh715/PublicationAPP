@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { AppService } from 'src/app/app.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-add-resources',
   templateUrl: './add-resources.component.html',
@@ -17,11 +17,13 @@ export class AddResourcesComponent implements OnInit {
   confForms!: FormGroup ;
 
   constructor(
-    private appService: AppService
+    private appService: AppService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
     this.createForms();
+    this.toastr.info("Select a resource from dropdown to add");
   }
 
   changedResource(){
@@ -65,8 +67,10 @@ export class AddResourcesComponent implements OnInit {
     console.log(this.confForms.getRawValue(),
       'conf forms');
     let payload = this.confForms.value;
-    this.appService.saveConference(payload).subscribe((res: any)=>{
+    this.toastr.success("Conferences added");
 
+    this.confForms.reset();
+    this.appService.saveConference(payload).subscribe((res: any)=>{
     });  
     
   }
@@ -75,8 +79,10 @@ export class AddResourcesComponent implements OnInit {
     console.log(this.jorForms.value,'jor');
     
     let payload = this.jorForms.value;
-    this.appService.saveJournal(payload).subscribe((res: any)=>{
+    this.toastr.success("Journal added");
 
+    this.jorForms.reset();
+    this.appService.saveJournal(payload).subscribe((res: any)=>{
     });
   }
 
@@ -84,8 +90,10 @@ export class AddResourcesComponent implements OnInit {
     console.log(this.deptForms.value,'dept');
     
     let payload = this.deptForms.value;
-    this.appService.saveDepartment(payload).subscribe((res: any)=>{
+    this.toastr.success("Department added");
 
+    this.deptForms.reset();
+    this.appService.saveDepartment(payload).subscribe((res: any)=>{
     });
   }
 
@@ -93,8 +101,10 @@ export class AddResourcesComponent implements OnInit {
     console.log(this.scholarForms.value,'scholarforms');
     
     let payload = this.scholarForms.value;
-    this.appService.saveScholar(payload).subscribe((res: any)=>{
+    this.toastr.success("Scholar added");
 
+    this.scholarForms.reset();
+    this.appService.saveScholar(payload).subscribe((res: any)=>{
     });
   }
 
@@ -102,8 +112,10 @@ export class AddResourcesComponent implements OnInit {
     console.log(this.facultyForms.value,'faculty forms');
     
     let payload = this.facultyForms.value;
-    this.appService.saveFaculty(payload).subscribe((res: any)=>{
+    this.toastr.success("Faculty added");
 
+    this.facultyForms.reset();
+    this.appService.saveFaculty(payload).subscribe((res: any)=>{
     });
   }
 

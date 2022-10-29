@@ -9,6 +9,9 @@ import { AddResourcesComponent } from './modules/add-resources/add-resources.com
 import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -19,11 +22,13 @@ import { ReactiveFormsModule } from '@angular/forms';
    
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
